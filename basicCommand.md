@@ -53,7 +53,7 @@ if dockerfile is not named `Dockerfile`
       dockerfile: Dockerfile.dev
 =========================
 
-`docker build -t name/container-name:version .`
+`docker build -t dockerhub-name/container-name:version .`
   create a tag name in place of image id
 
 `docker build -f <dockerfile-name> .`
@@ -63,3 +63,21 @@ if dockerfile is not named `Dockerfile`
   run shell command inside this container
 
 docker run -p 8080:80 1d03032f2936
+
+docker push dockerhub-name/container-name
+
+kubectl apply -f <file name>
+kubectl delete -f <file name>
+kubectl get pods
+kubectl get pods -o wide
+kubectl get deployments
+
+kubectl describe <object type> <object name> 
+`object name is optional`
+
+kubectl set image <object_type>/<object_name> <container_name> = <new image to use>
+kubectl set image deployment/client-deployment client=stephengrider/multi-client:v5
+
+
+imperative: manual config
+declarative: auto config
